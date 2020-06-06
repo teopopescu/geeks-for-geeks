@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  fantasy_pi_db:
+  geeks_db:
     build:
       dockerfile: ./Dockerfile_geeks_db
       context: ./geeks_db
@@ -16,7 +16,7 @@ services:
       - '5433:5432'
     expose: [5432]
 
-  fantasy_pi_server:
+  geeks_server:
     build:
       dockerfile: Dockerfile_geeks_server
       context: ./geeks_server

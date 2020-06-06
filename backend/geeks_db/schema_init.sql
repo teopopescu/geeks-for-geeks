@@ -1,5 +1,5 @@
-create database geeks;
-\c geeks;
+create database geeks_db;
+\c geeks_db;
 
 create schema core;
 create schema users;
