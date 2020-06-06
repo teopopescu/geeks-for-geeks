@@ -1,0 +1,20 @@
+FROM ubuntu:18.04
+
+RUN apt-get update \
+    && apt-get install -y \
+        build-essential \
+        git \
+        curl
+RUN apt-get update
+
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+
+RUN apt-get install -y python3.7
+RUN apt-get install -y python3-pip
+
+RUN mkdir /fantasy_pi_server 
+COPY . /fantasy_pi_server
+
+RUN python3.7 -m pip install --upgrade pip
+RUN cd /fantasy_pi_server &&  pip3 install -r requirements.txt
