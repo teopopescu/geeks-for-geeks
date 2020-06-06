@@ -3,6 +3,7 @@ from .db_toolbox import *
 
 helloworld = Blueprint("helloworld", __name__)
 db_con = connect_to_database()
+print("yay I am connected: ", db_con)
 
 
 @helloworld.route("/", endpoint="say_hello")
