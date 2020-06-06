@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="fantasy_pi_server", # Replace with your own username
+    name="geeks_for_geeks", # Replace with your own username
     version="0.0.1",
     author="Bernard Louis Alecu",
     author_email="bernard.alecu10@gmail.com",
