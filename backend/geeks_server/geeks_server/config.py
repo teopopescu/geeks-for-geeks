@@ -20,13 +20,6 @@ class FlaskConfigTemplate(object):
     TESTING = False
 
     DB_CONFIG = db_config
-#    SQLALCHEMY_DATABASE_URI = f"postgresql://{db_config['db_user']}:{db_config['db_pass']}@{db_config['db_host']}:{db_config['db_port']}/{db_config['db_name']}"
-#   SQLALCHEMY_DATABASE_URI = f"postgresql://{db_config['db_user']}@{db_config['db_host']}:{db_config['db_port']}/{db_config['db_name']}"
-
-
-
-# postgresql://scott:tiger@localhost:5432/mydatabase
-
 
 class DevelopmentConfig(FlaskConfigTemplate):
 

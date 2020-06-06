@@ -1,0 +1,30 @@
+query foo {
+  users {
+    userId
+    userTypeId
+    email
+  }
+}
+
+query bar {
+  userTypes {
+    userType
+    userTypeId
+  }
+}
+
+query foobar {
+  userById (userId: 1) {
+    userId
+    userTypeId
+    email
+  }
+}
+
+query email_by_id {
+  userByEmail (email: "plebemail") {
+    email
+    userId
+    userTypeId
+  }
+}

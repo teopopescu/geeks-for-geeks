@@ -1,5 +1,5 @@
-create database geeks;
-\c geeks;
+create database geeks_db;
+\c geeks_db;
 
 create schema core;
 create schema users;
@@ -23,6 +23,7 @@ create table users.users (
 drop table if exists core.topics cascade;
 create table core.topics (
 	topic_id           serial primary key,
+	name               varchar(500) not null,
 	description        varchar(500) not null
 );
 
