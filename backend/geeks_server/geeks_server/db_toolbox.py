@@ -6,6 +6,7 @@ import os
 class DbConnecter:
     def __init__(self, config):
         """Initialize the attributes with the given config. Tries to establish connection."""
+        print(config)
         self.config = config
         self.db_host = config["db_host"]
         self.db_name = config["db_name"]
