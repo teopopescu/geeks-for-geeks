@@ -43,12 +43,24 @@ class DbConnecter:
         self.session.execute(query)
         self.session.commit()
 
+    def _fetch_dict(self, query_result, description):
+        col_names = [col_obj[0] for col_obj in description]
+        transformed_results = [
+            {
+                col_names[tup_idx]: query_result[row][tup_idx]
+                for tup_idx in range(len(query_result[row]))
+            }
+            for row in range(len(query_result))
+        ]
+        return transformed_results
+
     def read_query(self, query):
         """Returns the result of a query."""
         self.db_cur.execute(query)
-        result = self.db_cur.fetchall()
-
-        return result
+        query_result = self.db_cur.fetchall()
+        description = self.db_cur.description
+        results = self._fetch_dict(query_result, description)
+        return results
 
     def execute_queries_list(self, queries_list):
         """
