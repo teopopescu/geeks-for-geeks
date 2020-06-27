@@ -10,6 +10,7 @@ class InputUsers(ObjectType):
     user_id = Int(required=True)
     user_type_id = Int()
     email = String()
+    password = String()
 
 
 class InputQuestions(ObjectType):

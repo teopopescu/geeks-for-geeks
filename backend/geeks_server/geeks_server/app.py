@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_jwt_extended import JWTManager
 from .config import DevelopmentConfig
 from .views import helloworld
 from flask_cors import CORS
@@ -10,6 +11,7 @@ def create_app():
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_object(DevelopmentConfig)
     CORS(app)
+    jwt = JWTManager(app)
 
     app.register_blueprint(helloworld)
     app.add_url_rule(

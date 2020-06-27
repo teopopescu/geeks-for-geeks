@@ -7,11 +7,12 @@ class CreateUser(graphene.Mutation):
     class Arguments:
         user_type_id = graphene.Int()
         email = graphene.String()
+        password = graphene.String()
 
     user = graphene.Field(InputUsers)
 
-    def mutate(root, info, user_type_id, email):
-        query_results = views.create_user(user_type_id, email)
+    def mutate(root, info, user_type_id, email, password):
+        query_results = views.create_user(user_type_id, email, password)
         user = InputUsers(**query_results[0])
         return CreateUser(user=user)
 

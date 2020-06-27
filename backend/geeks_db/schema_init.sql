@@ -16,7 +16,8 @@ drop table if exists users.users cascade;
 create table users.users (
 	user_id         serial primary key,
 	user_type_id    integer not null references users.user_types(user_type_id),
-	email           varchar(500) unique not null
+	email           varchar(500) unique not null,
+	password        varchar(500) not null
 );
 
 

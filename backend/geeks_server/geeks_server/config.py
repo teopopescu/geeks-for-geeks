@@ -20,6 +20,8 @@ class FlaskConfigTemplate(object):
     TESTING = False
 
     DB_CONFIG = db_config
+    JWT_SECRET_KEY = "jwt-secret-string"
+
 
 class DevelopmentConfig(FlaskConfigTemplate):
 
