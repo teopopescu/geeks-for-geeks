@@ -7,5 +7,5 @@ export GEEKS_DB_PORT=5433
 export GEEKS_DB_PASS=''
 
 echo "Inserting the test data"
-python3 ./run_sql.py -p './insert_test_data/test_data/'
+python ./run_sql.py -p './insert_test_data/test_data/'
 

@@ -24,18 +24,24 @@ create table users.users (
 drop table if exists core.topics cascade;
 create table core.topics (
 	topic_id           serial primary key,
-	name               varchar(500) not null,
-	description        varchar(500) not null
+	name               varchar(500) not null
 );
+
 
 
 drop table if exists core.questions cascade;
 create table core.questions (
+    topic_id         integer not null references core.topics(topic_id),
 	question_id      serial primary key,
-	topic_id         integer not null references core.topics(topic_id),
-	text    varchar(500) not null
-);
+	question_text    varchar(500) not null,
+	option_one varchar(500) not null,
+	option_two varchar(500) not null,
+	option_three varchar(500) not null,
+	option_four varchar(500) not null,
+	correct_answer varchar(500) not null,
+	difficulty integer not null
 
+);
 
 drop table if exists stats.questions_hist_data cascade;
 create table stats.questions_hist_data (
@@ -54,3 +60,8 @@ create table stats.topic_stats (
 	percentage_correct         numeric not null
 );
 
+-- create table core.test_table (
+-- 	topic_stats_id             integer not null,
+-- 	topic_id                   integer not null references core.topics(topic_id),
+-- 	percentage_correct         integer not null
+-- );
